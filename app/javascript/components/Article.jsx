@@ -49,11 +49,11 @@ class Article extends React.Component {
                 </div>
                 <div className="col-sm-12 col-lg-2">
                   <button type="button" className="btn btn-danger">
-                    Delete Recipe
+                    Delete Article
                   </button>
                 </div>
               </div>
-              <Link to="/recipes" className="btn btn-link">
+              <Link to="/articles" className="btn btn-link">
                 Return to Articles
               </Link>
             </div>
