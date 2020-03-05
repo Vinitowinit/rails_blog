@@ -14,36 +14,40 @@ class newArticle extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
     }
     onChange(event) {
-        this.setState({ [event.target.title]: event.target.value });
+        this.setState({ [event.target.name]: event.target.value });
       }
 
     onSubmit(event) {
+        console.log(event)
         event.preventDefault();
+        console.log(event)
         const url = "/api/v1/articles/create";
         const { title, abstract, body } = this.state;
 
-        if(title.length == 0 || abstract.length == 0 || body.length == 0)
+        if(title.length == 0 || abstract.length == 0 || body.length == 0){
         return;
-
+        };
+        console.log(event)
         const value = {
             body,
             abstract, 
             title 
         };
-       
+        console.log(value);
         //Token needed for proper write-authorization to server
         const token = document.querySelector('meta[name="csrf-token"]').content;
-
+        console.log(token);
         fetch(url, {
             method: "POST",
             headers: {
-              "X-CSRF-Token": token,
-              "Content-Type": "application/json"
+                "X-CSRF-Token": token,
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify(value)
           })
             .then(response => {
               if (response.ok) {
+                console.log("Fetch is okay");
                 return response.json();
               }
               throw new Error("Network response was not ok.");
@@ -51,6 +55,7 @@ class newArticle extends React.Component {
             .then(response => this.props.history.push(`/article/${response.id}`))
             .catch(error => console.log(error.message));
         };
+
     render() {
         return (
             <div className="container mt-5">
@@ -61,14 +66,15 @@ class newArticle extends React.Component {
                 </h1>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                    <label htmlFor="articleTitle">Article title</label>
+                    <label htmlFor="articleTitle">Article titlde</label>
                     <input
                         type="text"
                         name="title"
                         id="articleTitle"
                         className="form-control"
                         required
-                        onChange={this.onChange}
+                        onChange={ this.onChange
+                        }
                     />
                     </div>
                     <div className="form-group">
@@ -85,8 +91,8 @@ class newArticle extends React.Component {
                     <label htmlFor="instruction">Preparation Instructions</label>
                     <textarea
                     className="form-control"
-                    id="instruction"
-                    name="instruction"
+                    id="articleBody"
+                    name="body"
                     rows="5"
                     required
                     onChange={this.onChange}
@@ -100,7 +106,7 @@ class newArticle extends React.Component {
                 </form>
                 </div>
             </div>
-        </div>
+        </div> 
         );
         }
 

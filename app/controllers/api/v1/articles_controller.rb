@@ -5,7 +5,10 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   def create
+    puts params.inspect
+    logger.info "help"
     article= Article.create!(article_params)
+    logger.info "done"
     if article 
       render json: article
     else 
@@ -28,10 +31,10 @@ class Api::V1::ArticlesController < ApplicationController
 
   private
 
-  def article_parameters
+  def article_params
     params.permit(:title, :body, :abstract, :image)
   end 
-
+  
   def article 
     @article ||= Article.find(params[:id])
   end 
