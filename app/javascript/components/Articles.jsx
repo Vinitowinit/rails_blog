@@ -26,16 +26,26 @@ class Articles extends React.Component {
     }
 
     render (){
+        const styles = {
+            height: '400px',
+            width: '300px',
+            overflow: 'hidden'
+        };
+
         const { articles } = this.state;
         const totalArticles = articles.map((article, i) => (
-          <div key={i} className="col-md-6 col-lg-4">
+          <div key={i} className="col-md-6 col-lg-4 ">
             <div className="card mb-4">
               <img
                 src={article.image}
                 className="card-img-top"
                 alt={`${article.title} image`}
+                height= '230px'
+                width = 'auto'
+                background-size= 'cover'
+                overflow= 'hidden'
               />
-              <div className="card-body center">
+              <div className="card-body text-center">
                 <h5 className="card-title text-center">{article.title}</h5>
                 <Link to={`/article/${article.id}`} className="btn custom-button">
                   Article Here

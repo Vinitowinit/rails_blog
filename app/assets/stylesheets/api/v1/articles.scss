@@ -2,9 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-center {
-    height: 100vh; /* Magic here */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.frame {
+    height: 400px;
+    background: transparent no-repeat center;
+    background-size: cover;
+  }
