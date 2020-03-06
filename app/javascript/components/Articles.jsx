@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Home from "../images/house.png";
 import LN from "../images/Linkedin.PNG";
 import Medium from "../images/medium.png";
+import Applic from "../images/Application.png";
 
 class Articles extends React.Component {
     constructor(props) {
@@ -68,9 +69,9 @@ class Articles extends React.Component {
               <div className="container py-5">
                 <h1 className="display-4">Articles on BMIs</h1>
                 <p className="lead text-muted">
-                  The blog section acts as an example of what Neuralink can create to
-                  educate people who are interested in BMIs and the work being done. It will keep 
-                  the public engaged on topics like BMI research to interesting interviews. 
+                I have created blogs highlighting Neuralink's technology, BMIs history, 
+                neural decoding/encoding methods, and lighthearted Elon Musk moments. 
+                I have also referenced my LinkedIn, Medium, and Neuralink Application.  
                 </p>
               </div>
               <div className=" text-center b-3 center" >
@@ -88,6 +89,9 @@ class Articles extends React.Component {
                 </a>
                 <a href ="https://medium.com/@Vinitowinit" >
                     <img src={Medium} width= '70px' height ='70px' />
+                </a>
+                <a href ="https://docs.google.com/document/d/1tntotS-Br23ju4a_Sjoiy9h5nukJZcgK7rin_ivpfFs/edit" >
+                    <img src={Applic} width= '60px' height ='60px' />
                 </a>
                 </span>
             </section>

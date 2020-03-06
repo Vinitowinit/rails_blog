@@ -57,6 +57,7 @@ class Article extends React.Component {
         console.log(article);
         let styles = {
             margin: '10px',
+            whiteSpace: 'pre-link'
           };
 
         return (
@@ -72,11 +73,11 @@ class Article extends React.Component {
                 <div className="col-sm-12 ">
                   <h1 className="mb-2 text-center">{article.title}</h1>
                 </div>
-                <div className="col-sm-12 text-center text-muted" style={styles} >
+                <div className="col-sm-12 text-center text-muted" >
                   <h6 className="mb-2 text-center">{article.abstract}</h6>
                 </div>
-                <div className="col-sm-12 ">
-                  <h5 className="mb-2">{article.body}</h5>
+                <div className="col-sm-12" styles ={styles}>
+                  <h5 className="mb-2 pre-link" styles ={styles}>{article.body}</h5>
                 </div>
                 {/*
                 <div className="col-sm-12 col-lg-2">

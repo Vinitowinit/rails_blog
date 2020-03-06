@@ -7,7 +7,7 @@ export default () => (
         <div className="container secondary-color">
           <h1 className="display-4">Blog</h1>
           <p className="lead">
-            A curated list of blogs highlighting the technology here at Neuralink.
+            A curated list of blogs highlighting the people and technology here at Neuralink.
           </p>
           <hr className="my-4" />
           <Link
