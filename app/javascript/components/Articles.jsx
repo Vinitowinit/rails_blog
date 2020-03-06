@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Home from "../images/house.png";
+import LN from "../images/Linkedin.PNG";
+import Medium from "../images/medium.png";
 
 class Articles extends React.Component {
     constructor(props) {
@@ -32,8 +35,8 @@ class Articles extends React.Component {
                 className="card-img-top"
                 alt={`${article.title} image`}
               />
-              <div className="card-body">
-                <h5 className="card-title">{article.name}</h5>
+              <div className="card-body center">
+                <h5 className="card-title text-center">{article.title}</h5>
                 <Link to={`/article/${article.id}`} className="btn custom-button">
                   Article Here
                 </Link>
@@ -60,20 +63,29 @@ class Articles extends React.Component {
                   the public engaged on topics like BMI research to interesting interviews. 
                 </p>
               </div>
-            </section>
-            <div className="py-5">
-              <main className="container">
-                <div className="text-right mb-3">
-                  <Link to="/article" className="btn custom-button">
+              <div className=" text-center b-3 center" >
+                  <Link to="/article" className="btn custom-button text-center center">
                     New Article
                   </Link>
                 </div>
+                <br/>
+                <span>
+                <Link to="/" className="btn btn-link">
+                    <img src={Home} width= '50px' height ='50px' />
+                </Link>
+                <a href="https://www.linkedin.com/in/vinitowinit/">
+                    <img src={LN} width= '48px' height ='48px' />
+                </a>
+                <a href ="https://medium.com/@Vinitowinit" >
+                    <img src={Medium} width= '70px' height ='70px' />
+                </a>
+                </span>
+            </section>
+            <div className="py-5">
+              <main className="container">
                 <div className="row">
                   {articles.length > 0 ? totalArticles : noArticle}
                 </div>
-                <Link to="/" className="btn btn-link">
-                  Home
-                </Link>
               </main>
             </div>
           </>

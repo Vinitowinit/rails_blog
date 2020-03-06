@@ -7,13 +7,15 @@ class newArticle extends React.Component {
         this.state = {
             title: "",
             abstract: "",
-            body: ""
+            body: "",
+            image: ""
         };
     //arrow function not working in render, so bounded it instead
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     }
     onChange(event) {
+        console.log(event.target.value);
         this.setState({ [event.target.name]: event.target.value });
       }
 
@@ -22,7 +24,7 @@ class newArticle extends React.Component {
         event.preventDefault();
         console.log(event)
         const url = "/api/v1/articles/create";
-        const { title, abstract, body } = this.state;
+        const { title, abstract, body, image } = this.state;
 
         if(title.length == 0 || abstract.length == 0 || body.length == 0){
         return;
@@ -31,7 +33,8 @@ class newArticle extends React.Component {
         const value = {
             body,
             abstract, 
-            title 
+            title,
+            image 
         };
         console.log(value);
         //Token needed for proper write-authorization to server
@@ -66,7 +69,7 @@ class newArticle extends React.Component {
                 </h1>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                    <label htmlFor="articleTitle">Article titlde</label>
+                    <label htmlFor="articleTitle">Article title</label>
                     <input
                         type="text"
                         name="title"
@@ -88,7 +91,7 @@ class newArticle extends React.Component {
                         onChange={this.onChange}
                     />
                     </div>
-                    <label htmlFor="instruction">Preparation Instructions</label>
+                    <label htmlFor="body">Body</label>
                     <textarea
                     className="form-control"
                     id="articleBody"
@@ -97,6 +100,17 @@ class newArticle extends React.Component {
                     required
                     onChange={this.onChange}
                     />
+                    <div className="form-group">
+                    <label htmlFor="articleImage">Add Image URL</label>
+                    <input
+                        type="text"
+                        name="image"
+                        id="articleID"
+                        className="form-control"
+                        required
+                        onChange={this.onChange}
+                    />
+                    </div>
                     <button type="submit" className="btn custom-button mt-3">
                     Create Article
                     </button>
