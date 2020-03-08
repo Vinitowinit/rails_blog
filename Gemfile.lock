@@ -45,10 +45,14 @@ GEM
       execjs (~> 2.0)
     bindex (0.8.1)
     builder (3.2.4)
-    byebug (11.0.1)
+    byebug (11.1.1)
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
     crass (1.0.6)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2-x86-mingw32)
@@ -68,9 +72,9 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     nio4r (2.5.2)
-    nokogiri (1.10.8-x86-mingw32)
+    nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
-    pg (0.21.0-x86-mingw32)
+    pg (0.19.0-x86-mingw32)
     puma (3.12.4)
     rack (2.2.2)
     rack-proxy (0.6.5)
@@ -158,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  dotenv-rails
   jbuilder (~> 2.5)
   pg (~> 0.18)
   puma (~> 3.7)
@@ -171,4 +176,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   2.1.4
+   1.17.2
