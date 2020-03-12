@@ -12,10 +12,9 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
-    "react_ujs": "^2.6.1"
-  },
-  "devDependencies": {
+    "react_ujs": "^2.6.1",
     "webpack-cli": "^3.3.11"
+    
   },
   "scripts": {
     "start": "babel-node server-express.js",
