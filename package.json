@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.8.3",
-    "@rails/webpacker": "4.2.2",
+    "@rails/webpacker": "^4.2.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
@@ -17,6 +17,15 @@
   "devDependencies": {
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "scripts": {
+    "start": "babel-node server-express.js",
+    "build:test": "webpack --https --config webpack.config.js",
+    "build:production": "NODE_ENV=production webpack --https --config webpack.client.rails.build.config.js",
+    "build:development": "webpack -w --https --config webpack.config.js",
+    "hot-assets": "babel-node server-rails-hot.js",
+    "build:server": "webpack --config webpack.server.rails.build.config.js",
+    "build:dev:server": "webpack -w --https --config webpack.server.rails.build.config.js",
+    "build:dev:client": "webpack -w --https --config webpack.client.rails.build.config.js"
   }
-  
 }
